@@ -1,0 +1,10 @@
+ENTRY("_start")
+
+SECTIONS
+{
+    BOOTUP_0 0x80000000: AT(0x80000000)
+    {
+        abc.o(*)
+
+    }
+}

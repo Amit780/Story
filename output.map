@@ -1,0 +1,25 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD abc.o
+
+BOOTUP_0        0x0000000080000000      0x155
+ abc.o(*)
+ .text          0x0000000080000000       0x20 abc.o
+                0x0000000080000000                _start
+ .data          0x0000000080000020        0x8 abc.o
+ .bss           0x0000000080000028        0x0 abc.o
+ .debug_line    0x0000000080000028       0x5d abc.o
+ .debug_info    0x0000000080000085       0x27 abc.o
+ .debug_abbrev  0x00000000800000ac       0x14 abc.o
+ .debug_aranges
+                0x00000000800000c0       0x30 abc.o
+ .debug_str     0x00000000800000f0       0x2e abc.o
+ .riscv.attributes
+                0x000000008000011e       0x37 abc.o
+OUTPUT(ABC.elf elf64-littleriscv)

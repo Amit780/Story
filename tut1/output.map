@@ -1,0 +1,27 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD ./sort.o
+
+BOOTUP_0        0x0000000080000000      0x222
+ */sort.o(*)
+ .text          0x0000000080000000        0x4 ./sort.o
+                0x0000000080000000                _start
+ *fill*         0x0000000080000004       0xfc 
+ .data          0x0000000080000100        0x0 ./sort.o
+ .bss           0x0000000080000100        0x0 ./sort.o
+ .debug_line    0x0000000080000100       0x3e ./sort.o
+ .debug_info    0x000000008000013e       0x27 ./sort.o
+ .debug_abbrev  0x0000000080000165       0x14 ./sort.o
+ *fill*         0x0000000080000179        0x7 
+ .debug_aranges
+                0x0000000080000180       0x30 ./sort.o
+ .debug_str     0x00000000800001b0       0x36 ./sort.o
+ .riscv.attributes
+                0x00000000800001e6       0x3c ./sort.o
+OUTPUT(tutorial_1.elf elf64-littleriscv)

@@ -1,0 +1,15 @@
+export PATH=/home/valtrix/tools/common-tools/mimas/riscv64-unknown-elf-toolsuite-15.9.0-2023.03.0-rc0-x86_64-linux-redhat8/bin/:$PATH
+
+function r()
+{
+/home/valtrix/Downloads/spike/spike/bin/spike -p1 -m0x80000000:0x20000000 --isa=RV64IMAFDC /home/valtrix/work/training/ABC.elf
+}
+
+function d()
+{
+/home/valtrix/work/sting/tools/spike/bin/spike -d -p3 -m0x80000000:0x20000000 --isa=RV64IMAFDC ABC.elf
+}
+function t()
+{
+/home/valtrix/work/sting/tools/spike/bin/spike -p3 -l --log-commits -m0x80000000:0x20000000 --isa=RV64IMAFDC ABC.elf 2> trace
+}
